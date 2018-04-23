@@ -28,9 +28,9 @@ deployment:
     branch: /^(?!master$).*$/
     commands:
       - ~/toaster/toast.sh publish beanstalk
-      - ~/toaster/toast.sh deploy beanstalk config-server-dev
+      - ~/toaster/toast.sh deploy beanstalk eureka-server-dev
   production:
     branch: master
     commands:
       - ~/toaster/toast.sh publish beanstalk
-      - ~/toaster/toast.sh deploy beanstalk config-server-prod
+      - ~/toaster/toast.sh deploy beanstalk eureka-server-prod
