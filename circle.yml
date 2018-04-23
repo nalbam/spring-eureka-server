@@ -2,6 +2,8 @@ machine:
   timezone: Asia/Seoul
   java:
     version: oraclejdk8
+  environment:
+    CONFIG_SERVER: http://localhost:8888
 
 dependencies:
   pre:
