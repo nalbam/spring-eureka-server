@@ -3,3 +3,7 @@ spring:
     name: eureka-server
   profiles:
     active: ${PROFILE:default}
+  cloud:
+    config:
+      uri: http://${CONFIG_SERVER_HOST:localhost}:${CONFIG_SERVER_PORT:8888}
+      label: ${LABEL:master}
