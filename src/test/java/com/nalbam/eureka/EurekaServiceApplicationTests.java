@@ -30,4 +30,5 @@ public class EurekaServiceApplicationTests {
 
         then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
     }
+
 }
