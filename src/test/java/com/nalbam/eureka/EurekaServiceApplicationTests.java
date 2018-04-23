@@ -1,34 +1,21 @@
 package com.nalbam.eureka;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.assertj.core.api.BDDAssertions.then;
-
+@Slf4j
+@SpringBootTest
+@ActiveProfiles("test")
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class EurekaServiceApplicationTests {
 
-    @LocalServerPort
-    private int port;
-
-    @Autowired
-    private TestRestTemplate testRestTemplate;
-
     @Test
-    public void shouldStartEurekaServer() {
-        String url = "http://localhost:" + this.port + "/eureka/apps";
-
-        ResponseEntity<String> entity = this.testRestTemplate.getForEntity(url, String.class);
-
-        then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
+    public void contextLoads() {
+        log.debug("## contextLoads ##");
     }
 
 }
